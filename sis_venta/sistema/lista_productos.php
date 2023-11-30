@@ -35,7 +35,7 @@
 								<tr>
 									<td><?php echo $data['codproducto']; ?></td>
 									<td><?php echo $data['descripcion']; ?></td>
-									<td><?php echo $data['precio']; ?></td>
+									<td><?php echo 'S/ ' . $data['precio']; ?></td>
 									<td><?php echo $data['existencia']; ?></td>
 										<?php if ($_SESSION['rol'] == 1) { ?>
 									<td>

@@ -32,7 +32,7 @@
 
    <!-- Page Heading -->
    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-     <h1 class="h3 mb-0 text-gray-800">Panel de Administración</h1>
+     <h1 class="h3 mb-0 text-gray-800">Agregar Producto</h1>
      <a href="lista_productos.php" class="btn btn-primary">Regresar</a>
    </div>
 
@@ -66,9 +66,14 @@
            <input type="text" placeholder="Ingrese nombre del producto" name="producto" id="producto" class="form-control">
          </div>
          <div class="form-group">
-           <label for="precio">Precio</label>
-           <input type="text" placeholder="Ingrese precio" class="form-control" name="precio" id="precio">
-         </div>
+  <label for="precio">Precio</label>
+  <div class="input-group"> <!-- Agregamos un grupo de entrada para incluir el símbolo -->
+    <div class="input-group-prepend">
+      <span class="input-group-text">S/</span> <!-- Aquí agregamos el símbolo -->
+    </div>
+    <input type="text" placeholder="Ingrese precio" class="form-control" name="precio" id="precio">
+  </div>
+</div>
          <div class="form-group">
            <label for="cantidad">Cantidad</label>
            <input type="number" placeholder="Ingrese cantidad" class="form-control" name="cantidad" id="cantidad">

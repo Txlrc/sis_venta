@@ -63,9 +63,14 @@ if (!empty($_POST)) {
                     <input type="number" class="form-control" value="<?php echo $data_producto['existencia']; ?>" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="precio">Nuevo Precio</label>
-                    <input type="number" placeholder="Ingrese nombre del precio" name="precio" class="form-control" value="<?php echo $data_producto['precio']; ?>">
-                </div>
+    <label for="precio">Nuevo Precio</label>
+    <div class="input-group"> <!-- Agregamos un grupo de entrada para incluir el símbolo -->
+        <div class="input-group-prepend">
+            <span class="input-group-text">S/</span> <!-- Aquí agregamos el símbolo -->
+        </div>
+        <input type="number" placeholder="Ingrese nombre del precio" name="precio" class="form-control" value="<?php echo $data_producto['precio']; ?>">
+    </div>
+</div>
                 <div class="form-group">
                     <label for="cantidad">Agregar Cantidad</label>
                     <input type="number" placeholder="Ingrese cantidad" name="cantidad" id="cantidad" class="form-control">

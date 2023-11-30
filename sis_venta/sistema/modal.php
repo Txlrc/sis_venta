@@ -99,32 +99,32 @@ if ($_POST['action'] == 'addProductoDetalle') {
       $sub_total = round($sub_total + $precioTotal, 2);
       $total = round($total + $precioTotal, 2);
 
-        $detalleTabla .='<tr>
-            <td>'.$data['codproducto'].'</td>
-            <td colspan="2">'.$data['descripcion'].'</td>
-            <td class="textcenter">'.$data['cantidad'].'</td>
-            <td class="textright">'.$data['precio_venta'].'</td>
-            <td class="textright">'.$precioTotal.'</td>
-            <td>
-                <a href="#" class="btn btn-danger" onclick="event.preventDefault(); del_product_detalle('.$data['correlativo'].');"><i class="fas fa-trash-alt"></i> Eliminar</a>
-            </td>
-        </tr>';
+      $detalleTabla .='<tr>
+      <td>'.$data['codproducto'].'</td>
+      <td colspan="2">'.$data['descripcion'].'</td>
+      <td class="textcenter">'.$data['cantidad'].'</td>
+      <td class="textright">S/ '.$data['precio_venta'].'</td>
+      <td class="textright">S/ '.$precioTotal.'</td>
+      <td>
+          <a href="#" class="btn btn-danger" onclick="event.preventDefault(); del_product_detalle('.$data['correlativo'].');"><i class="fas fa-trash-alt"></i> Eliminar</a>
+      </td>
+  </tr>';
     }
     $impuesto = round($sub_total / $iva, 2);
     $tl_sniva = round($sub_total - $impuesto, 2);
     $total = round($tl_sniva + $impuesto, 2);
     $detalleTotales ='<tr>
-        <td colspan="5" class="textright">Sub_Total S/.</td>
-        <td class="textright">'.$impuesto.'</td>
-    </tr>
-    <tr>
-        <td colspan="5" class="textright">Igv ('.$iva.'%)</td>
-        <td class="textright">'. $tl_sniva.'</td>
-    </tr>
-    <tr>
-        <td colspan="5" class="textright">Total S/.</td>
-        <td class="textright">'.$total.'</td>
-    </tr>';
+    <td colspan="5" class="textright">Sub_Total S/.</td>
+    <td class="textright">S/ '.$impuesto.'</td>
+</tr>
+<tr>
+    <td colspan="5" class="textright">Igv ('.$iva.'%)</td>
+    <td class="textright">S/ '.$tl_sniva.'</td>
+</tr>
+<tr>
+    <td colspan="5" class="textright">Total S/.</td>
+    <td class="textright">S/ '.$total.'</td>
+</tr>';
     $arrayData['detalle'] = $detalleTabla;
     $arrayData['totales'] = $detalleTotales;
     echo json_encode($arrayData,JSON_UNESCAPED_UNICODE);

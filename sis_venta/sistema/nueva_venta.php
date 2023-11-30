@@ -79,16 +79,16 @@
                                             <td id="txt_descripcion">-</td>
                                             <td id="txt_existencia">-</td>
                                             <td><input type="text" name="txt_cant_producto" id="txt_cant_producto"value="0" min="1" disabled></td>
-                                            <td id="txt_precio" class="textright">0.00</td>
-                                            <td id="txt_precio_total" class="txtright">0.00</td>
+                                            <td class="textright">S/ <span id="txt_precio">0.00</span></td>
+                                            <td class="textright">S/ <span id="txt_precio_total">0.00</span></td>
                                             <td><a href="#" id="add_product_venta" class="btn btn-dark" style="display: none;">Agregar</a></td>
                                         </tr>
                                         <tr>
                                             <th>Código</th>
                                             <th colspan="2">Descripción</th>
                                             <th>Cantidad</th>
-                                            <th class="textright">Precio</th>
-                                            <th class="textright">Precio Total</th>
+                                            <th class="textright">Precio (S/)</th>
+                                            <th class="textright">Precio Total (S/)</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>

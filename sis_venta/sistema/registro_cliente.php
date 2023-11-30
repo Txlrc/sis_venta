@@ -44,7 +44,7 @@ if (!empty($_POST)) {
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Panel de Administración</h1>
+        <h1 class="h3 mb-0 text-gray-800">Agregar Cliente</h1>
         <a href="lista_cliente.php" class="btn btn-primary">Regresar</a>
     </div>
 
@@ -54,21 +54,21 @@ if (!empty($_POST)) {
             <form action="" method="post" autocomplete="off">
                 <?php echo isset($alert) ? $alert : ''; ?>
                 <div class="form-group">
-                    <label for="dni">Dni</label>
-                    <input type="number" placeholder="Ingrese dni" name="dni" id="dni" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" placeholder="Ingrese Nombre" name="nombre" id="nombre" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="telefono">Teléfono</label>
-                    <input type="number" placeholder="Ingrese Teléfono" name="telefono" id="telefono" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="direccion">Dirección</label>
-                    <input type="text" placeholder="Ingrese Direccion" name="direccion" id="direccion" class="form-control">
-                </div>
+    <label for="dni">DNI</label>
+    <input type="text" placeholder="Ingrese DNI (9 dígitos)" name="dni" id="dni" class="form-control" maxlength="9">
+</div>
+<div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" placeholder="Ingrese Nombre" name="nombre" id="nombre" class="form-control">
+</div>
+<div class="form-group">
+    <label for="telefono">Teléfono</label>
+    <input type="text" placeholder="Ingrese Teléfono (9 dígitos)" name="telefono" id="telefono" class="form-control" maxlength="9">
+</div>
+<div class="form-group">
+    <label for="direccion">Dirección</label>
+    <input type="text" placeholder="Ingrese Dirección" name="direccion" id="direccion" class="form-control">
+</div>
                 <input type="submit" value="Guardar Cliente" class="btn btn-primary">
             </form>
         </div>
@@ -77,7 +77,38 @@ if (!empty($_POST)) {
 
 </div>
 <!-- /.container-fluid -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dniInput = document.getElementById('dni');
+        const telefonoInput = document.getElementById('telefono');
 
+        dniInput.addEventListener('input', function() {
+            if (this.value.length > 9) {
+                this.value = this.value.slice(0, 9);
+            }
+        });
+
+        telefonoInput.addEventListener('input', function() {
+            if (this.value.length > 9) {
+                this.value = this.value.slice(0, 9);
+            }
+        });
+
+        dniInput.addEventListener('blur', function() {
+            if (this.value.length !== 9) {
+                alert('El DNI debe contener 9 dígitos');
+                this.value = '';
+            }
+        });
+
+        telefonoInput.addEventListener('blur', function() {
+            if (this.value.length !== 9) {
+                alert('El teléfono debe contener 9 dígitos');
+                this.value = '';
+            }
+        });
+    });
+</script>
 </div>
 <!-- End of Main Content -->
 <?php include_once "includes/footer.php"; ?>

@@ -83,10 +83,14 @@ if (empty($_REQUEST['id'])) {
 
             </div>
             <div class="form-group">
-              <label for="precio">Precio</label>
-              <input type="text" placeholder="Ingrese precio" class="form-control" name="precio" id="precio" value="<?php echo $data_producto['precio']; ?>">
-
-            </div>
+    <label for="precio">Precio</label>
+    <div class="input-group"> <!-- Agregamos un grupo de entrada para incluir el símbolo -->
+        <div class="input-group-prepend">
+            <span class="input-group-text">S/</span> <!-- Aquí agregamos el símbolo -->
+        </div>
+        <input type="text" placeholder="Ingrese precio" class="form-control" name="precio" id="precio" value="<?php echo $data_producto['precio']; ?>">
+    </div>
+</div>
             <input type="submit" value="Actualizar Producto" class="btn btn-primary">
           </form>
         </div>
